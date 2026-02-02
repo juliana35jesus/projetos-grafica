@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Calculadora de Orçamentos - Gráfica Rápida</h1>
+<p>Bem-vinda, Juliana! Vamos automatizar seus processos.</p>
+
+<label>Valor do Material (R$):</label>
+<input type="number" id="precoPapel" placeholder="Ex: 50.00">
+
+<button onclick="calcular()">Calcular Total</button>
+
+<h2 id="resultado"></h2>
+
+<script>
+    function calcular() {
+        let preco = document.getElementById('precoPapel').value;
+        let total = preco * 1.5; // Exemplo: margem de 50%
+        document.getElementById('resultado').innerText = "O valor para o cliente é: R$ " + total;
+    }
+</script>  
+</body>
+</html>
