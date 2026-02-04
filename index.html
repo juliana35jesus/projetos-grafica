@@ -1,27 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Orçamentos Gráfica TechArte</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f4f4f4; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); max-width: 400px; }
+        input, select, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 4px; border: 1px solid #ccc; }
+        button { background-color: #28a745; color: white; font-weight: bold; cursor: pointer; }
+    </style>
 </head>
 <body>
-  <h1>Calculadora de Orçamentos - Gráfica Rápida</h1>
-<p>Bem-vinda, Juliana! Vamos automatizar seus processos.</p>
 
-<label>Valor do Material (R$):</label>
-<input type="number" id="precoPapel" placeholder="Ex: 50.00">
+<div class="card">
+    <h1>Gráfica TechArte</h1>
+    <p>Calcule o valor do serviço abaixo:</p>
 
-<button onclick="calcular()">Calcular Total</button>
+    <label>Quantidade:</label>
+    <input type="number" id="quantidade" value="1">
 
-<h2 id="resultado"></h2>
+    <label>Tipo de Papel:</label>
+    <select id="tipoPapel">
+        <option value="0.10">Sulfite (R$ 0,10)</option>
+        <option value="0.50">Couchê (R$ 0,50)</option>
+        <option value="1.20">Adesivo (R$ 1,20)</option>
+    </select>
+
+    <button onclick="calcularOrcamento()">Calcular Orçamento</button>
+
+    <h2 id="total">Total: R$ 0,00</h2>
+</div>
 
 <script>
-    function calcular() {
-        let preco = document.getElementById('precoPapel').value;
-        let total = preco * 1.5; // Exemplo: margem de 50%
-        document.getElementById('resultado').innerText = "O valor para o cliente é: R$ " + total;
+    function calcularOrcamento() {
+        let qtd = document.getElementById('quantidade').value;
+        let papel = document.getElementById('tipoPapel').value;
+        let resultado = qtd * papel;
+        
+        // Adicionando uma margem de lucro de 100%
+        let totalFinal = resultado * 2; 
+
+        document.getElementById('total').innerText = "Total: R$ " + totalFinal.toFixed(2);
     }
-</script>  
+</script>
+
 </body>
 </html>
