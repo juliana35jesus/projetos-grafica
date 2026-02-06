@@ -32,16 +32,22 @@
 </div>
 
 <script>
-    function calcularOrcamento() {
-        let qtd = document.getElementById('quantidade').value;
-        let papel = document.getElementById('tipoPapel').value;
-        let resultado = qtd * papel;
-        
-        // Adicionando uma margem de lucro de 100%
-        let totalFinal = resultado * 2; 
+    <script>
+    function calcular() {
+        let quantidade = document.getElementById('quantidade').value;
+        let precoUnitario;
 
-        document.getElementById('total').innerText = "Total: R$ " + totalFinal.toFixed(2);
+        // A Lógica do Pleno: Tomada de Decisão
+        if (quantidade >= 100) {
+            precoUnitario = 0.40; // Preço com desconto
+        } else {
+            precoUnitario = 0.50; // Preço normal
+        }
+
+        let total = quantidade * precoUnitario;
+        document.getElementById('resultado').innerText = "R$ " + total.toFixed(2);
     }
+</script>
 </script>
 
 </body>

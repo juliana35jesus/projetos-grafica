@@ -1,0 +1,99 @@
+:root {
+    --azul-escuro: #0a1f2c; /* Cor do fundo do seu logo */
+    --ciano: #00aeef;
+    --amarelo: #fff200;
+    --magenta: #ec008c;
+    --branco: #ffffff;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: var(--branco);
+    color: var(--azul-escuro);
+}
+
+header {
+    background-color: var(--azul-escuro);
+    padding: 20px;
+    color: var(--branco);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(10, 31, 44, 0.9), rgba(10, 31, 44, 0.9)), url('sua-imagem-de-fundo.jpg');
+    background-size: cover;
+    color: var(--branco);
+}
+
+.btn-cta {
+    background-color: var(--ciano);
+    color: var(--branco);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block; /* Importante para a margem funcionar bem */
+    margin-top: 30px;      /* Isso vai empurrar o botão para baixo */
+    transition: background 0.3s, transform 0.2s;
+}
+
+.servicos {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--magenta);
+}
+
+/* Cores das gotas nos ícones */
+.cyan { background-color: var(--ciano); height: 10px; width: 50px; margin: 0 auto 10px; }
+.yellow { background-color: var(--amarelo); height: 10px; width: 50px; margin: 0 auto 10px; }
+.magenta { background-color: var(--magenta); height: 10px; width: 50px; margin: 0 auto 10px; }
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--ciano); /* Muda de cor quando passa o mouse */
+}
